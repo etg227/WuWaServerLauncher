@@ -1,0 +1,49 @@
+name: Build Windows launcher
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore
+        run: dotnet restore src/WuWaServerLauncher.csproj
+
+      - name: Build
+        run: dotnet build src/WuWaServerLauncher.csproj -c Release --no-restore
+
+      - name: Publish
+        run: >
+          dotnet publish src/WuWaServerLauncher.csproj
+          -c Release
+          -r win-x64
+          --self-contained true
+          -p:PublishSingleFile=true
+          -p:IncludeNativeLibrariesForSelfExtract=true
+          -o publish
+
+      - name: Package
+        shell: pwsh
+        run: |
+          Compress-Archive -Path publish/* -DestinationPath WuWaServerLauncher-win-x64.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WuWaServerLauncher-win-x64
+          path: WuWaServerLauncher-win-x64.zip
