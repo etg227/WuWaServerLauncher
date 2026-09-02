@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WuWaServerLauncher", "src\WuWaServerLauncher.csproj", "{E9C8A9AF-5B2B-4F43-9B1E-1BBD9D8C8A11}"
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+        Debug|x64 = Debug|x64
+        Release|x64 = Release|x64
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {E9C8A9AF-5B2B-4F43-9B1E-1BBD9D8C8A11}.Debug|Any CPU.ActiveCfg = Debug|AnyCPU
+        {E9C8A9AF-5B2B-4F43-9B1E-1BBD9D8C8A11}.Debug|Any CPU.Build.0 = Debug|AnyCPU
+        {E9C8A9AF-5B2B-4F43-9B1E-1BBD9D8C8A11}.Release|Any CPU.ActiveCfg = Release|AnyCPU
+        {E9C8A9AF-5B2B-4F43-9B1E-1BBD9D8C8A11}.Release|Any CPU.Build.0 = Release|AnyCPU
+        {E9C8A9AF-5B2B-4F43-9B1E-1BBD9D8C8A11}.Debug|x64.ActiveCfg = Debug|x64
+        {E9C8A9AF-5B2B-4F43-9B1E-1BBD9D8C8A11}.Debug|x64.Build.0 = Debug|AnyCPU
+        {E9C8A9AF-5B2B-4F43-9B1E-1BBD9D8C8A11}.Release|x64.ActiveCfg = Release|AnyCPU
+        {E9C8A9AF-5B2B-4F43-9B1E-1BBD9D8C8A11}.Release|x64.Build.0 = Release|AnyCPU
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+EndGlobal
